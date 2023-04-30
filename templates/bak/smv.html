@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %} SMV Page {% endblock %}
+
+{% block content %}
+
+<body>
+<table>
+  <tr>
+    <td>
+      <div class:"sidebar">
+          <ul>
+              <li><a href="/">Home</a></li>
+              <li><a class="active" href="/smv">SMV</a></li>
+              <li><a href="/fertility">Fertility</a></li>
+          </ul>
+      </div>
+    </td>
+    <td colspan="3" align="center" valign="top">
+    <img src="{{url_for('static', filename='RPcalculations1.png')}}">
+    </td>
+  </tr>
+  <tr>
+    <td>
+    </td>
+    <td colspan="3" align="center" valign="top">
+      <h1>SMV</h1>
+  
+      <p>The goal is to determine the relative SMV (Sexual Market
+      Value) of men and women relative to each other.</p>
+    </td>
+  </tr>
+  
+  <form method="post",  action="/smv">
+    <div class="body-text">
+      <tr>
+        <td>
+        </td>
+        <td valign="top" bgcolor="CCE5FF">
+          <h2>Man:</h2>
+            <h4>Age:{{ form.age_m }}</h4>
+            <h4>Height:{{ form.height_m }}</h4>
+            <h4>Weight:{{ form.weight_m }}</h4>
+            <h4>Body Fat %:{{ form.bf_m }}</h4>
+            <h4>Body Fat Calipers%:{{ form.bf_c_m }}</h4>
+            <h4>Annual Income:{{ form.income_m }}</h4>
+        </td>
+        <td valign="top" bgcolor="CCE5FF">
+          <h2>Results</h2>
+          <table border="1">
+            <tr><th>SMV        </th><th>Perceived Percent</th><th>Actual Percent         </th></tr>
+            <tr><td>{{ smv_m }}</td><td>{{ percent_m }}% </td><td>{{ percent_m_actual }}%</td></tr>
+          </table>
+          <p>Perceived Percent: This is the percent that a woman will perceive a man to be.
+             Throughout a woman's life the importance of physical traits (Height or Leanness)
+             vs provisioning traits (Income) shift. When a woman considers a man, the perceived
+             percent is that value that she internalizes.</p>
+          <p>Actual Percent: This is the unmitigated percent that a man is at. It is more of a
+             true value than the obfuscated value that perception introduces.</p>
+          <p>Ultimately, only perceived SMV matters, but context is helpful.</p>
+        </td>
+        <td valign="top" bgcolor="CCE5FF">
+          <h2>Commentary</h2>
+          {% for para in commentary_m %}
+            <p>{{ para }}</p>
+          {% endfor %}
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td valign="top" bgcolor="FFD0F6">
+          <h2>Woman:</h2>
+            <h4>Age:{{ form.age_f }}</h4>
+            <h4>Height:{{ form.height_f }}</h4>
+            <h4>Weight:{{ form.weight_f }}</h4>
+            <!--<h4>Body Fat %:{{ form.bf_f }}</h4>-->
+            <!--<h4>Body Fat Calipers%:{{ form.bf_c_f }}</h4>-->
+            <h4>Annual Income:{{ form.income_f }}</h4>
+            <input type="submit">
+        </td>
+        <td valign="top" bgcolor="FFD0F6">
+          <h2>Results</h2>
+          <table border="1">
+            <tr><th>Time</th><th>SMV</th><th>Percent</th></th>
+            <tr><td>Today</td>      <td>{{ smv_f }}</td>   <td>{{ percent_f }}%</td></tr>
+            <tr><td>+5 yrs</td> <td>{{ smv_f_5 }}</td> <td>{{ percent_f_5 }}%</td></tr>
+            <tr><td>+10 yrs</td><td>{{ smv_f_10 }}</td><td>{{ percent_f_10 }}%</td></tr>
+          </table>
+        </td>
+        <td valign="top" bgcolor="FFD0F6">
+          <h2>Commentary</h2>
+          {% for para in commentary_f %}
+            <p>{{ para }}</p>
+          {% endfor %}
+        </td>
+      </tr>
+    </div>
+  </form>
+  </table>
+  <p>This is a statistical analysis exercised through calculation.
+     Set the characteristics for a given couple (Man and Woman) and
+     then click the "Submit Query" button.</p>
+
+{% endblock %}

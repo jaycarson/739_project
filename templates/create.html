@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %} Home Page {% endblock %}
+{% block content %}
+
+<table>
+<tr>
+  <td>
+    <div class:"sidebar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a class="active" href="/">Create</a></li>
+            <li><a href="/update">Update</a></li>
+        </ul>
+    </div>
+  </td>
+  <td>
+  <img src="{{url_for('static', filename='RPcalculations1.png')}}">
+  </td>
+</tr>
+<tr>
+  <td>
+  </td>
+  <td>
+    <p>Welcome! Here you can create characters to be
+    used in Dungeons And Dragon 5th Edition.</p>
+  </td>
+</tr>
+<form method="post", action="/create">
+  <div class="body-text">
+    <tr>
+      <td>
+      </td>
+      <td valign="top" bgcolor="CCE5FF">
+        <h2>"New Character:"</h2>
+          <h4>Your Name:{{ form.user_name }}</h4>
+          <h4>Character Name:{{ form.char_name }}</h4>
+          <h4>Race:{{ form.race }}</h4>
+          <h4>Class:{{ form.char_class }}</h4>
+          <h3>Attributes:</h3>
+          <h4>Str:{{ form.strenght }}</h4><form method="post", action="/">
+          <h4>Dex:{{ form.dexterity }}</h4>
+          <h4>Con:{{ form.constitution }}</h4>
+          <h4>Int:{{ form.intelligence }}</h4>
+          <h4>Wis:{{ form.wisdom }}</h4>
+          <h4>Cha:{{ form.charisma }}</h4>
+      </td>
+    </tr>
+  </div>
+</form>
+</table>
+
+{{ content }}
+{% endblock %}

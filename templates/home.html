@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %} Home Page {% endblock %}
+{% block content %}
+
+<table>
+<tr>
+  <td>
+    <div class:"sidebar">
+        <ul>
+            <li><a class="active" href="/">Home</a></li>
+            <li><a href="/create">Create</a></li>
+            <li><a href="/update">Update</a></li>
+        </ul>
+    </div>
+  </td>
+  <td>
+  <img src="{{url_for('static', filename='RPcalculations1.png')}}">
+  </td>
+</tr>
+<tr>
+  <td>
+  </td>
+  <td>
+    <p>Welcome! Here you can create characters to be
+    used in Dungeons And Dragon 5th Edition.</p>
+  </td>
+</tr>
+</table>
+
+
+{{ content }}
+{% endblock %}
