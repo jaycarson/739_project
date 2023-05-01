@@ -3,6 +3,7 @@ from CharacterClassFactory import CharacterClassFactory
 from CharacterBackgroundFactory import CharacterBackgroundFactory
 from CharacterRaceFactory import CharacterRaceFactory
 from ConnectionDB import ConnectionDB
+from CharacterGUI import CharacterGUI
 
 
 class Tests(unittest.TestCase):
@@ -58,6 +59,12 @@ class Tests(unittest.TestCase):
     def test_that_key_is_correct(self):
         connection = ConnectionDB()
         self.assertEqual(connection.create_key(name='Name', gm='GM', lvl=1), 'GM-Name-1')
+
+    def test_attribute_distribution(self):
+        gui = CharacterGUI()
+        attribute_array = [15, 14, 13, 12, 10, 8]
+        for item in attribute_array:
+            self.assertIn(item, gui.attrs)
 
 
 
