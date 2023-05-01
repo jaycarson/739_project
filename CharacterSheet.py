@@ -50,7 +50,7 @@ class CharacterSheet(object):
         weapon_profs = []
         armor_profs = []
         tool_profs = []
-        darkvision = 0
+        dark_vision = 0
         specials = []
         gears = []
         if character.character_race.name != 'None':
@@ -58,7 +58,7 @@ class CharacterSheet(object):
             weapon_profs = character.character_race.weapon_profs
             armor_profs = character.character_race.armor_profs
             tool_profs = character.character_race.tool_profs
-            darkvision = character.character_race.darkvision
+            dark_vision = character.character_race.dark_vision
             for item in character.character_race.special:
                 specials.append(item)
         if character.character_class.name != 'None':
@@ -91,7 +91,7 @@ class CharacterSheet(object):
             self.table[6][1] = 'N/A'
         else:
             self.table[6][1] = character.get_spellcasting_dc()
-        self.table[7][1] = darkvision
+        self.table[7][1] = dark_vision
         
         self.table[1][3] = character.get_stat('str')
         self.table[2][3] = character.get_stat('dex')
@@ -124,3 +124,6 @@ class CharacterSheet(object):
         clear()
         put_table(self.table)
         put_table(self.table_details)
+
+    def update(self):
+        return

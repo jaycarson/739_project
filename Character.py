@@ -10,7 +10,7 @@ class Character(object):
     def __init__(self):
         self.name = ''
         self.proficiency = 0
-        self.darkvision = 0
+        self.dark_vision = 0
         self.max_hp = 0
         self.level = 1
         self.proficiency = 2
@@ -45,7 +45,7 @@ class Character(object):
     def __call__(self):
         for stat in self.stats:
             self.stats_final[stat] = self.stats[stat] + self.character_race[stat]
-        self.darkvision = max(self.character_race.darkvision, self.character_class.darkvision)
+        self.dark_vision = max(self.character_race.dark_vision, self.character_class.dark_vision)
 
     def add_gear(self, item):
         if self.weapon_rack.is_weapon(item):
@@ -102,6 +102,7 @@ class Character(object):
 
     def update_max_hp(self):    
         self.max_hp = self.character_class.hit_die + (int((self.get_stat('con') - 10) / 2) * self.level)
+        self.dark_vision = max(self.character_race.dark_vision, self.character_class.dark_vision)
 
     def print_sheet(self):
         self.character_sheet(self)

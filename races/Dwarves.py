@@ -8,7 +8,7 @@ class Dwarf(CharacterRace):
         self.tool_profs = ["smith's tools", "brewer's supplies", "mason's tools"]
         self.weapon_profs = ['battleaxe', 'handaxe', 'light hammer', 'warhammer']
         self.languages.append('dwarvish')
-        self.darkvision = 60
+        self.dark_vision = 60
         self.tool_prof_count = 1
         self.stats['con'] = 2
 

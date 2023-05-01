@@ -1,7 +1,7 @@
 class CharacterClass(object):
     def __init__(self):
         self.owner = None
-        self.darkvision = 0
+        self.dark_vision = 0
         self.name = 'None'
         self.stats = {'str': 0, 'dex': 0, 'con': 0, 'int': 0, 'wis': 0, 'cha': 0}
         self.hit_die = 8

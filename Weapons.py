@@ -12,6 +12,9 @@ class Weapon(object):
         self.heavy = False
         self.reach = False
 
+    def update(self):
+        return
+
 
 class Club(Weapon):
     def __init__(self):

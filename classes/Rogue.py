@@ -9,7 +9,7 @@ class Rogue(CharacterClass):
         self.weapon_profs = ['simple', 'hand crossbow', 'long sword', 'rapier', 'short sword']
         self.armor_profs = ['light']
         self.languages.append("thieve's cant")
-        self.tool_profs = ["thive's tools"]
+        self.tool_profs = ["thieve's tools"]
         self.tool_prof_count = 1
         self.class_profs = ['acrobatics', 'athletics', 'deception', 'insight', 'intimidation', 'investigation', 'perception', 'performance', 'persuasion', 'sleight of hand', 'stealth']
         self.class_prof_count = 4

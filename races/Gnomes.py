@@ -6,7 +6,7 @@ class Gnome(CharacterRace):
         CharacterRace.__init__(self)
         self.size = 'Small'
         self.speed = 25
-        self.darkvision = 60
+        self.dark_vision = 60
         self.languages.append('gnomish')
         self.special = ['Gnomish Cunning: You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic']
         self.stats['int'] = 2

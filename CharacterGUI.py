@@ -59,6 +59,7 @@ class CharacterGUI(object):
             if self.new_char.stats[stat] in self.attrs:
                 self.attrs.remove(self.new_char.stats[stat])
             self.new_char.print_sheet()
+        self.attrs = [15, 14, 13, 12, 10, 8]
 
     def get_table(self):
         new_table = []

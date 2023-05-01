@@ -6,6 +6,9 @@ class Armor(object):
         self.min_str = 0
         self.disadvantage = False
 
+    def update(self):
+        return
+
 
 class Padded(Armor):
     def __init__(self):

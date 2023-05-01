@@ -6,6 +6,7 @@ class HalfOrc(CharacterRace):
         CharacterRace.__init__(self)
         self.name = 'Half Orc'
         self.stats = {'str': 2, 'dex': 0, 'con': 1, 'int': 0, 'wis': 0, 'cha': 0}
+        self.dark_vision = 60
         self.languages.append('orc')
         self.class_profs = ['intimidation']
         self.class_prof_count = 1
@@ -17,7 +18,7 @@ class Tiefling(CharacterRace):
         CharacterRace.__init__(self)
         self.name = 'Tiefling'
         self.stats = {'str': 0, 'dex': 0, 'con': 0, 'int': 1, 'wis': 0, 'cha': 2}
-        self.darkvision = 60
+        self.dark_vision = 60
         self.languages.append('infernal')
         self.resistences = ['fire']
         self.special = ['Infernal Legacy: You know the Thaumaturgy cantrip.']
@@ -38,7 +39,7 @@ class HalfElf(CharacterRace):
         CharacterRace.__init__(self)
         self.name = 'Half Elf'
         self.stats = {'str': 0, 'dex': 0, 'con': 0, 'int': 0, 'wis': 0, 'cha': 2} # Plus choose 2 for +1
-        self.darkvision = 60
+        self.dark_vision = 60
         self.languages.append('elvish')  # Plus choose 1
         self.class_profs = ['all']
         self.class_prof_count = 2

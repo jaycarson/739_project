@@ -35,7 +35,7 @@ class ConnectionDB(object):
         command += '"' + character.character_race.name + '", '
         command += '"' + character.character_background.name + '", '
         command += str(character.max_hp) + ', '
-        command += str(character.darkvision) + ', '
+        command += str(character.dark_vision) + ', '
         command += str(character.level) + ', '
         command += str(character.stats['str']) + ', '
         command += str(character.stats['dex']) + ', '

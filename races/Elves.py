@@ -4,7 +4,7 @@ from races.CharacterRace import CharacterRace, NoRace
 class Elf(CharacterRace):
     def __init__(self):
         CharacterRace.__init__(self)
-        self.darkvision = 60
+        self.dark_vision = 60
         self.special = ['Keen Senses: You have proficiency in the Perception skill', "Fey Ancestry: You have advantage on savign throws against being charmed, and magic can't put you to sleep."]
         self.languages.append('elvish')
         self.class_profs = ['perception']
@@ -36,9 +36,9 @@ class Drow(Elf):
         Elf.__init__(self)
         self.name = 'Drow'
         self.stats['cha'] = 1
-        self.darkvision = 120
+        self.dark_vision = 120
         self.special.append('Sunlight Sensitivity: You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.')
         self.special.append('Drow Magic: You may cast Dancing Lights Cantrip.')
         self.special.append('Drow Magic: At 3rd Level, you may cast Fairie Fire once per long rest. Charisma is your spellcasting ability.')
         self.special.append('Drow Magic: At 5th Level, you may cast Darkness once per long rest. Charisma is your spellcasting ability.')
-        self.weapon_profs = ['rapier', 'shortsword', 'hand crossbow']
+        self.weapon_profs = ['rapier', 'short sword', 'hand crossbow']
